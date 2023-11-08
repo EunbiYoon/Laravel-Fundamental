@@ -1,1 +1,0 @@
-<h1>{{ $render_text }}</h1>

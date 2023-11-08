@@ -28,13 +28,13 @@
                 @endif
             @endforeach
             
-            @php
+            <!-- @php
                 $i='';
             @endphp
 
             @empty($i)
                 <div class="alert alert-success">This is empty</div>
-            @endempty
+            @endempty -->
         </div>
     </main>
 @endsection

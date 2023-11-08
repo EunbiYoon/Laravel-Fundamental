@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,86 +20,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-/** naming route  **/
-Route::get('about', function () {
-    return view('about');
-})->name('about');
+Route::get('home', [HomeController::class,'index']);
 
-Route::get('contact', function () {
-    return "<h1>Contact Page</h1>";
-});
+Route::get('about', [AboutController::class,'index'])->name('about');
 
-/** route parameter  **/
-Route::get('contact/{id}', function ($id) {
-    return $id;
-})->name('edit-contact');
-
-Route::get('about2', function () {
-    return "<a href='".route('edit-contact',1)."'>About</a>";
-});
-
-/** route grouping **/
-Route::group(['prefix'=>'customer'], function(){
-    Route::get('/',function(){
-        return "<h1>Customer List</h1>";
-    });
-    
-    Route::get('/create',function(){
-        return "<h1>Customer Create</h1>";
-    });
-    
-    Route::get('/show',function(){
-        return "<h1>Customer Show</h1>";
-    });
-});
-
-/** route method **/
-//get - read a resource
-//post - create a resource
-//put - update (multiple) resource
-//patch - modify (only one) resource
-//delete - delete a resource
-
-/** fallback route **/
-Route::fallback(function(){
-    return "Route Not Exist!";
-});
-
-/** return with view **/
-/** render data  **/
-Route::get('boat',function(){
-    $text="This is boat page by rendering text";
-    return view('boat',['render_text'=>$text]);
-});
-Route::get('tube',function(){
-    $text="This is tube page by rendering text";
-    $check='This is about two rendering checked';
-    return view('tube.index', compact('text','check'));
-});
-
-/** building application layout **/
-Route::get('home', function(){
-    $blogs=[
-        [
-            'title'=>'Title one',
-            'body'=> 'this is a body',
-            'status'=>1
-        ],
-        [
-            'title'=>'Title two',
-            'body'=> 'this is a body',
-            'status'=>0
-        ],
-        [
-            'title'=>'Title three',
-            'body'=> 'this is a body',
-            'status'=> 1
-        ],
-        [
-            'title'=>'Title four',
-            'body'=> 'this is a body',
-            'status'=> 1
-        ]
-    ];
-    return view('home', compact('blogs'));
-});
+Route::get('contact', [ContactController::class,'index']);
