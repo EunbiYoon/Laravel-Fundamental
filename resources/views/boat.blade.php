@@ -1,1 +1,1 @@
-<h1>this is working with boat</h1>
+<h1>{{ $render_text }}</h1>

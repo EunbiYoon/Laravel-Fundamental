@@ -1,1 +1,2 @@
-<h3>this is tube</h3>
+<h3>{{$text}}</h3>
+<h4>{{$check}}</h4>

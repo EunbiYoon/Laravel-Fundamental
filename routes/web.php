@@ -63,9 +63,13 @@ Route::fallback(function(){
 });
 
 /** return with view **/
+/** render data  **/
 Route::get('boat',function(){
-    return view('boat');
+    $text="This is boat page by rendering text";
+    return view('boat',['render_text'=>$text]);
 });
 Route::get('tube',function(){
-    return view('tube.index');
+    $text="This is tube page by rendering text";
+    $check='This is about two rendering checked';
+    return view('tube.index', compact('text','check'));
 });
