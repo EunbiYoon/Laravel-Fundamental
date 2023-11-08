@@ -61,3 +61,11 @@ Route::group(['prefix'=>'customer'], function(){
 Route::fallback(function(){
     return "Route Not Exist!";
 });
+
+/** return with view **/
+Route::get('boat',function(){
+    return view('boat');
+});
+Route::get('tube',function(){
+    return view('tube.index');
+});
