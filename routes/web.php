@@ -19,7 +19,7 @@ Route::get('/', function () {
 
 /** naming route  **/
 Route::get('about', function () {
-    return "<h1>About Page</h1>";
+    return view('about');
 })->name('about');
 
 Route::get('contact', function () {
@@ -76,5 +76,23 @@ Route::get('tube',function(){
 
 /** building application layout **/
 Route::get('home', function(){
-    return view('home');
+    $blogs=[
+        [
+            'title'=>'Title one',
+            'body'=> 'this is a body'
+        ],
+        [
+            'title'=>'Title two',
+            'body'=> 'this is a body'
+        ],
+        [
+            'title'=>'Title three',
+            'body'=> 'this is a body'
+        ],
+        [
+            'title'=>'Title four',
+            'body'=> 'this is a body'
+        ]
+    ];
+    return view('home', compact('blogs'));
 });
