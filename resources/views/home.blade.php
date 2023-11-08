@@ -27,6 +27,14 @@
                     </div>                    
                 @endif
             @endforeach
+            
+            @php
+                $i='';
+            @endphp
+
+            @empty($i)
+                <div class="alert alert-success">This is empty</div>
+            @endempty
         </div>
     </main>
 @endsection
