@@ -31,7 +31,7 @@ Route::get('contact/{id}', function ($id) {
     return $id;
 })->name('edit-contact');
 
-Route::get('home', function () {
+Route::get('about2', function () {
     return "<a href='".route('edit-contact',1)."'>About</a>";
 });
 
@@ -72,4 +72,9 @@ Route::get('tube',function(){
     $text="This is tube page by rendering text";
     $check='This is about two rendering checked';
     return view('tube.index', compact('text','check'));
+});
+
+/** building application layout **/
+Route::get('home', function(){
+    return view('home');
 });
