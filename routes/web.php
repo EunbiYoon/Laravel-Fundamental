@@ -79,19 +79,23 @@ Route::get('home', function(){
     $blogs=[
         [
             'title'=>'Title one',
-            'body'=> 'this is a body'
+            'body'=> 'this is a body',
+            'status'=>1
         ],
         [
             'title'=>'Title two',
-            'body'=> 'this is a body'
+            'body'=> 'this is a body',
+            'status'=>0
         ],
         [
             'title'=>'Title three',
-            'body'=> 'this is a body'
+            'body'=> 'this is a body',
+            'status'=> 1
         ],
         [
             'title'=>'Title four',
-            'body'=> 'this is a body'
+            'body'=> 'this is a body',
+            'status'=> 1
         ]
     ];
     return view('home', compact('blogs'));
