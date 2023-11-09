@@ -21,7 +21,7 @@
                     </div>
                     <div class="mb-2">
                         <label for="" class="form-label">User Email</label>
-                        <input name="email" type="email" class="form-control">
+                        <input name="email" type="text" class="form-control">
                     </div>
                     <div class="mb-2">
                         <label for="" class="form-label">User Password</label>
