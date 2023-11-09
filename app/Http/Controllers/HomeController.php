@@ -12,7 +12,8 @@ class HomeController extends Controller
      */
     public function __invoke(Request $request)
     {
-        return DB::table('posts')->pluck('title','id');
+        return DB::table('posts')->where('id','=',10)->get();
+      
         // $blogs=[
         //     [
         //         'title'=>'Title one',
