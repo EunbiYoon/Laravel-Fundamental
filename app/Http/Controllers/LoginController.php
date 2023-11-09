@@ -6,7 +6,11 @@ use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
-    public function index(Request $request){
+    public function index(){
         return view("login");
+    }
+
+    public function handleLogin(Request $request){
+        dd($request->all());
     }
 }
