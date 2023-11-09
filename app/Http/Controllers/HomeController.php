@@ -13,9 +13,35 @@ class HomeController extends Controller
     public function __invoke(Request $request)
     {
 
-        DB::table("posts")->delete(56);
-
+        DB::table('posts')->insert([
+            [
+                'title'=>'This is a test Data',
+                'description'=>'Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, numquam aliquid. Excepturi enim, animi obcaecati at ipsam ea eos officia fugiat autem aliquam. Nesciunt, facilis aspernatur voluptatum odio recusandae mollitia.',
+                'status'=>1,
+                'publish_date'=>date('Y-m-d'),
+                'user_id'=>1,
+                'category_id'=>1
+            ],
+            [
+                'title'=>'This is a test Data',
+                'description'=>'Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, numquam aliquid. Excepturi enim, animi obcaecati at ipsam ea eos officia fugiat autem aliquam. Nesciunt, facilis aspernatur voluptatum odio recusandae mollitia.',
+                'status'=>1,
+                'publish_date'=>date('Y-m-d'),
+                'user_id'=>1,
+                'category_id'=>2
+            ],
+            [
+                'title'=>'This is a test Data',
+                'description'=>'Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, numquam aliquid. Excepturi enim, animi obcaecati at ipsam ea eos officia fugiat autem aliquam. Nesciunt, facilis aspernatur voluptatum odio recusandae mollitia.',
+                'status'=>1,
+                'publish_date'=>date('Y-m-d'),
+                'user_id'=>1,
+                'category_id'=>3
+            ]
+        ]);
         dd('success');
+
+        // DB::table("posts")->delete(56);
 
         // DB::table("posts")->where('id',56)->update(
         //     [
