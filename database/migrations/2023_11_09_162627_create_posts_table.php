@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('title',100); //255
             $table->text('description');
-            $table->boolean('status');
+            $table->boolean('status'); //0 or 1
             $table->timestamps(); //created_at and updated_at
 
             // //more datatypes
