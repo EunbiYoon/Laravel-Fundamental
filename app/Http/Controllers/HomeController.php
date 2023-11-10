@@ -14,10 +14,70 @@ class HomeController extends Controller
      */
     public function __invoke(Request $request)
     {
-        $posts=Post::all();
-        foreach($posts as $post){
-            echo $post->title;
-        }
+        Post::withTrashed()->find(61)->forceDelete();
+        dd('success');
+
+        // Post::withTrashed()->find(61)->restore();
+        // dd('success');
+
+        // return Post::onlyTrashed()->get();
+        // Post::find(61)->delete();
+        // dd('success');
+        // return Post::onlyTrashed()->get();
+        // Post::where('id',70)->delete();
+        // dd('success');
+
+        // $post=Post::where('status',1)->update([
+        //     "title"=> 'status updated',
+        //     'description'=>'0 to 1 updated',
+        //     'status'=> 0
+        // ]);
+        // dd('success');
+
+
+        // $post=Post::create([
+        //     "title"=> 'this is new title',
+        //     "description"=>'this is a description from mass assign',
+        //     'status'=> 1,
+        //     'publish_date'=> date('Y-m-d'),
+        //     'user_id'=>1,
+        //     'category_id'=>2,
+        //     'views'=>500
+        // ]);
+
+        // dd('success');
+        
+
+        // Post::where('id',62)->delete();
+        // dd('success');
+
+        // $post= POST::where('id',61)->first();
+        // $post->title='This is a new title';
+        // $post->description='this is a new description';
+        // $post->save();
+        // dd('success');
+
+        // $post=new Post();
+        // $post->title='post 4';
+        // $post->description='this is a test description';
+        // $post->status=1;
+        // $post->publish_date=date('Y-m-d');
+        // $post->user_id=1;
+        // $post->category_id=1;
+        // $post->views= 400;
+
+        // $post->save();
+        // dd('success');
+
+
+
+        // return Post::where('views','>',100)->orWhere('id','=',61)->get();
+
+        // return Post::where('views','>',100)->where('id','=',61)->get();
+        // $posts=Post::all();
+        // foreach($posts as $post){
+        //     echo $post->title;
+        // }
         // return $posts;
 
         /** retrieving single data or fail**/
