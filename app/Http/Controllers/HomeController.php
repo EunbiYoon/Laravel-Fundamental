@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\MyPost;
+use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -12,9 +14,31 @@ class HomeController extends Controller
      */
     public function __invoke(Request $request)
     {
-        return DB::table('posts')->join('categories','posts.category_id','=','categories.id')
-        ->select('categories.*')
-        ->get();
+        $posts=Post::all();
+        foreach($posts as $post){
+            echo $post->title;
+        }
+        // return $posts;
+
+        /** retrieving single data or fail**/
+        // return $post=Post::findOrFail(65);
+
+        /** retrieving single data **/
+        // $post=POST::find(61);
+        // return $post->description;
+        // return DB::table('posts')->find(61);
+
+        // /** retrieving all data **/
+        // return Post::all(); //DB::table('posts')->get();
+        
+
+        // return $posts=MyPost::all();
+        // /** count, max, min, avg(average), sum **/
+        // return DB::table('posts')->min('views');
+
+        // return DB::table('posts')->join('categories','posts.category_id','=','categories.id')
+        // ->select('categories.*')
+        // ->get();
 
 
         // DB::table('posts')->insert([
