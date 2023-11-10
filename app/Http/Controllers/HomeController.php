@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use App\Models\Address;
+use App\Models\Category;
 use App\Models\User;
 use App\Models\MyPost;
 use Illuminate\Http\Request;
@@ -16,8 +17,11 @@ class HomeController extends Controller
      */
     public function __invoke(Request $request)
     {
-        $addresses=Address::all();
-        return view('home',compact('addresses'));
+        $categoires=Category:all();
+        return view('home',compact('categories'));
+
+        // $addresses=Address::all();
+        // return view('home',compact('addresses'));
 
         // $users=User::all();
         // return view('home',compact('users'));
