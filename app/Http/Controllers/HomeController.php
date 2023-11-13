@@ -11,6 +11,7 @@ use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
+use File;
 
 class HomeController extends Controller
 {
@@ -19,8 +20,10 @@ class HomeController extends Controller
      */
     public function __invoke(Request $request)
     {
-        Storage::disk('public')->delete('/images/new_image.jpg');
+        Storage::delete('/images/testee.jpg');
 
+        // File::delete(storage_path('app/public/images/6ffQl45DcfXqf4zCL1R8eFz39WOtlNTzfDG8iObh.txt'));
+        // Storage::disk('public')->delete('/images/new_image.jpg');
 
         // return view('home');
         // $posts=Post::with('tags')->get();
