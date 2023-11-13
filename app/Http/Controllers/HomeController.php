@@ -10,6 +10,7 @@ use App\Models\Address;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class HomeController extends Controller
 {
@@ -18,7 +19,10 @@ class HomeController extends Controller
      */
     public function __invoke(Request $request)
     {
-        return view('home');
+        Storage::disk('public')->delete('/images/new_image.jpg');
+
+
+        // return view('home');
         // $posts=Post::with('tags')->get();
         // return view('home',compact('posts'));
 
