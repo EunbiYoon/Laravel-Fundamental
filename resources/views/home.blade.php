@@ -4,7 +4,13 @@
     <main role="main" class="container">
         <!-- return your domain -->
         <img src="{{asset('/storage/images/new_image.jpg')}}" alt=""> 
+
         <div class="col-md-4">
+            @if ($errors->any())
+                @foreach ($errors->all() as $error)
+                    <div class="alert alert-danger">{{$error}}</div>
+                @endforeach
+            @endif
             <div class="card">
                 <div class="card-body">
                     <form action="{{route('upload-file')}}" method="POST" enctype="multipart/form-data">
@@ -20,5 +26,6 @@
                 </div>
             </div>
         </div>
+        <a class="btn btn-primary mt-3" href="{{route('download')}}">Download Image</a>
     </main>
 @endsection

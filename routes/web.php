@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +24,12 @@ Route::get('/', function () {
 Route::get('home', HomeController::class);
 
 Route::post('/upload-file', [ImageController::class,'handleImage'])->name('upload-file');
+
+Route::get('/success',function(){
+    return '<h1>Successfully uploaded</h1>'; 
+})->name('success');
+
+Route::get('/download', [ImageController::class,'download'])->name('download');
 
 Route::get('/login', [LoginController::class,'index'])->name('login');
 
